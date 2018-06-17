@@ -1,4 +1,4 @@
-// Author : Anchit Pandey a.k.a AP
+// Author : Anchit Pandey
 
 import java.io.*;
 import java.util.*;
