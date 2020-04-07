@@ -1,0 +1,57 @@
+class MyStack {
+
+    /** Initialize your data structure here. */
+    Queue<Integer> qu;
+    public MyStack() {
+        qu = new LinkedList<Integer>();
+    }
+    
+    /** Push element x onto stack. */
+    public void push(int x) {
+        qu.add (x);
+    }
+    
+    /** Removes the element on top of the stack and returns that element. */
+    public int pop() {
+        int size = qu.size();
+        for (int i= 1 ; i <=size-1;i+=1)
+        {
+           int dd =  qu.poll();
+            qu.add  (dd);
+        }
+        return qu.poll(); 
+    }
+    
+    /** Get the top element. */
+    public int top() {
+        
+        int size = qu.size();
+        for (int i= 1 ; i <=size-1;i+=1)
+        {
+           int dd =  qu.poll();
+            qu.add  (dd);
+        }
+        int last = qu.poll();
+        qu.add (last);
+        
+        return last; 
+    }
+    
+    /** Returns whether the stack is empty. */
+    public boolean empty() {
+    
+        if (qu.size () ==0 )
+            return true;
+        else 
+            return false;        
+    }
+}
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack obj = new MyStack();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.top();
+ * boolean param_4 = obj.empty();
+ */
