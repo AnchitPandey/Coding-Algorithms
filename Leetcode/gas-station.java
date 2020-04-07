@@ -1,9 +1,5 @@
 class Solution {
     public int canCompleteCircuit(int[] gas, int[] cost) {
-        
-    
-        
-        
         int currIndex =0;
         int n = gas.length; 
         if (n ==0)
