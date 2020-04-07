@@ -1,2 +1,1 @@
-# Hackerrank-Practice-Algo-Problems
-hackerrank problem solutions. 
+Leetcode, hackerrank etc
