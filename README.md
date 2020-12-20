@@ -1,1 +1,1 @@
-My solution for problems of Leetcode, hackerrank etc
+My solutions for problems of Leetcode, hackerrank etc
