@@ -16,7 +16,6 @@
 class Solution {
     
     HashMap<TreeNode,Integer> mapper;
-    
     public void dfs (TreeNode curr, HashMap<TreeNode, Integer> opt)
     {
         if (curr.left == null && curr.right == null)
