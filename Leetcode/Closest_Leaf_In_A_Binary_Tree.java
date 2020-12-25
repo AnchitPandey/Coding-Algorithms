@@ -22,12 +22,11 @@ class Solution {
         qu.add (root);
         pm.put (root, null);
         Set<TreeNode> visited = new HashSet<TreeNode>();
-
         while (!qu.isEmpty())
         {
             TreeNode curr = qu.poll();
             if (curr.val == k)
-            {
+            {   
                 root = curr;
                 qu = new LinkedList<TreeNode>();
                 visited.add (root);
