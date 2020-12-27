@@ -1,25 +1,19 @@
 class ParkingSystem {
 
     
-    HashMap<Integer, Integer> mapper;
-    
+    int[] arr;
     public ParkingSystem(int big, int medium, int small) {
-        mapper = new HashMap<Integer, Integer>();
-        mapper.put (1, big);
-        mapper.put (2, medium);
-        mapper.put (3, small);
+        arr = new int[3];
+        arr[0] = big;
+        arr[1] = medium;
+        arr[2] = small;
     }
     
     public boolean addCar(int carType) {
-        
-        if (mapper.get(carType) > 0)
-        {
-            mapper.put(carType, mapper.get(carType) - 1);
-            return true;
-        }
-        else
+        if (arr[carType -1] <=0)
             return false;
-        
+        arr[carType-1] -=1;
+        return true;
     }
 }
 
