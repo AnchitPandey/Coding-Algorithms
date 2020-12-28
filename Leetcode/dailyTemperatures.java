@@ -1,27 +1,26 @@
-class dailyTemperatures {
-    
+class Solution {
     public int[] dailyTemperatures(int[] T) {
         
-    Stack<Integer> stack = new Stack<Integer>();
-    int[] opt = new int [T.length];
-        if (T.length ==0)
-            return opt;
-    HashMap<Integer,Integer> mapper = new HashMap<Integer,Integer>();
-    stack.push (0);
-    for (int i= 0; i<T.length;i+=1)
-    {
+        int len= T.length;
+        int[] fa = new int[len];
+        if (len == 0)
+            return fa;
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push (0);
+        for (int i =1; i< T.length;i+=1)
+        {
+            while(!stack.isEmpty() && T[i] > T[stack.peek()]) 
+            {
+                int top = stack.pop();
+                fa[top] = i - top;
+            }
+            stack.push (i);
+        }
         while (!stack.isEmpty())
         {
-            if (T[stack.peek()] < T[i])
-            {
-                int q = stack.pop();
-                opt[q] = i-q;
-            }
-            else
-                break;
+            int top = stack.pop();
+            fa[top] = 0;
         }
-        stack.push (i);
-    }
-    return opt;
+        return fa;
     }
 }
