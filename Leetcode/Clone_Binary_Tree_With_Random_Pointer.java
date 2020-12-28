@@ -21,7 +21,6 @@ class Solution {
     public NodeCopy copyRandomBinaryTree(Node root) {
         if (root ==null)
             return null;
-        
         NodeCopy r = new NodeCopy (root.val);
         HashMap<Node, NodeCopy> mapper = new HashMap<Node, NodeCopy>();
         mapper.put (root,r);
